@@ -1,0 +1,10 @@
+{% extends 'polls/base.html' %}
+
+{% block main_content %}
+
+<h1>{{question.Question_text}}</h1>
+<h2 style="color: #ffebcd;">{{question.answer}}</h2>
+<a href="{% url 'polls:index' %}">Go to the questions page again!</a>
+    
+
+{% endblock %}

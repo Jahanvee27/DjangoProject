@@ -1,0 +1,18 @@
+.heading{
+    margin-top: 10%;
+    font-size: 60px;
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bolder;
+}
+
+.start{
+    margin-top: 80px;
+    font-style: oblique;
+    text-align: center;
+}
+
+#anchor{
+    color: salmon;
+    font-size: 50px;
+}

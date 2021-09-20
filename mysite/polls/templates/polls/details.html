@@ -1,0 +1,35 @@
+{% extends 'polls/base.html' %}
+
+{% block main_content %}
+
+
+    <form action="{% url 'polls:vote' question.id %}" method="post">
+        {% csrf_token %}
+        <input type="hidden" name="csrf-token" value="CIwNZNlR4XbisJF39I8yWnWX9wX4WFoz" />
+
+        <div class="container-fluid">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h2>{{question.Question_text}}</h2>
+                    </div>
+                    {% if error_message %} <p><strong>{{error_message}}</strong></p>{% endif %}
+                    <div class="modal-body">
+                        <div class="col-xs-3 5"> </div>
+                        <div class="quiz" id="quiz" data-toggle="buttons"> 
+                            {% for Choice in question.choice_set.all %}
+                                <label class="element-animation1 btn btn-lg btn-danger btn-block"><span class="btn-label">
+                                <i class="glyphicon glyphicon-chevron-right"></i></span> 
+                                <input type="radio" name="Choice" id="Choice{{forloop.counter}}" class="text-style" value="{{Choice.id}}">{{Choice.choice_text}}</label> 
+                            {% endfor %}
+                        </div>
+                        <br><br><br>
+                        <center><button type="submit" class="btn btn-danger size">Vote</button></center>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    </form>
+
+{% endblock %}

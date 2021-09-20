@@ -1,0 +1,13 @@
+li a{
+    font-size: 30px;
+    color: red;
+}
+
+body{
+    color: silver;
+    background-color: black;
+    background-image:  url("images/image.jpg");
+    background-repeat: repeat;
+}
+
+
